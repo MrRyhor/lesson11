@@ -36,12 +36,13 @@ batleField = getBatlefieldWithShips(qntShips)
 console.log(batleField) // для теста
 
 function getGame(qntOfShoot) {
-    for (let i = 1; i <= qntOfShoot; i++) {
+    for (let i = 1; i <= qntOfShoot, qntShips > 0; i++) {
         let userShootX = parseInt(prompt('Введите координату по оси Х:'))
         let userShootY = parseInt(prompt('Введите координату по оси Y:'))
-        if (batleField[userShootY - 1][userShootX - 1] === 1 && qntShips > 0) {
+        if (batleField[userShootY - 1][userShootX - 1] === 1) {
             qntShips--
             alert(`Вы потопили корабль осталось кораблей ${qntShips}`)
+
         } else
             alert('Вы промахнулись :( Стреляйте ещё')
     }
