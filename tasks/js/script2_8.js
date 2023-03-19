@@ -28,11 +28,17 @@ const profitsOfAllShops = createTableArr(qntShops)
 
 //================================== (8)============================================================================
 
-for (let row = 0; row < profitsOfAllShops.length; row++) {
-    profitsOfAllShops[row].sort((el1, el2) => el2 - el1)
+// for (let row = 0; row < profitsOfAllShops.length; row++) {
+//     profitsOfAllShops[row].sort((el1, el2) => el2 - el1)
+// }
+for (const row of profitsOfAllShops) {
+    for (const col of row) {
+        row.sort((element1, element2) => element2 - element1)
+    }
+    profitsOfAllShops.sort((element1, element2) => element2[0] - element1[0])
 }
 
 console.log(profitsOfAllShops)
 
-result1.innerHTML = `${profitsOfAllShops}`
+result1.innerHTML = `[${profitsOfAllShops}]`
 
